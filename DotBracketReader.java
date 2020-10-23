@@ -47,7 +47,7 @@ public class DotBracketReader {
     }
 
 
-    public List<Sequence> readBractket(String filepath,){
+    public List<Sequence> readBractket(String filepath){
         DotBracketReader locationInfo = new DotBracketReader(filepath);
         List<Sequence> result = new ArrayList<>();
         try { List<String> allLines = Files.readAllLines(Paths.get(this.filepath));
