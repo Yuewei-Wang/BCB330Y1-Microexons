@@ -9,28 +9,54 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Sequence {
-    private String seqTitle;
-    private String seq;
-    private String energy;
+    private String Name;
+    private String Type;
+    private String Seq;
+    private double Energy;
+    private int A_index;
+    private int A_length;
 
-    public Sequence(String filepath) throws IOException{
+    public Sequence(String title, String seq){
+        Name = title.substring(title.indexOf("  ")+2, title.lastIndexOf(" "));
+        Type = title.substring(title.lastIndexOf(" "));
+        Seq = seq;
+        seq = title.substring(title.indexOf(">ENERGY = -")+1, title.indexOf("  "));
+        Energy = Double.parseDouble(seq)*-1;
+    }
+
+    public void setSeq(String seq) {
+        Seq = seq;
+    }
+
+    public void setEnergy(double energy) {
+        Energy = energy;
+    }
+
+    public String getName() {
+        return Name;
+    }
+
+    public String getType() {
+        return Type;
+    }
+
+    /**public Sequence(String filepath) throws IOException{
         DotBracketReader reader = new DotBracketReader(filepath);
         List<String> collector = reader.readBractket();
         this.seq = collector.get(0);
         this.seqTitle = collector.get(2);
-        this.energy = collector.get(1);
+        String energy = collector.get(1);
+        this.energy = Double.parseDouble(energy.substring(1))*(-1);
     }
+    **/
+
 
 
     public String getSeq() {
-        return this.seq;
+        return Seq;
     }
 
-    public String getSeqTitle() {
-        return this.seqTitle;
-    }
-
-    public String getEnergy() {
-        return this.energy;
+    public double getEnergy() {
+        return Energy;
     }
 }
