@@ -16,14 +16,14 @@ public class DotBracketReader {
         return filepath;
     }
 
-    public int[] readLocation(String name, String filepath){
+    public int[] readLocation(String name){
         int[] result = new int[2];
         try { List<String> allLines = Files.readAllLines(Paths.get(this.filepath));
             for(String line : allLines){
                 if(line.contains(name)){
                     String[] info = line.split("\t");
-                    result[0] = Integer.parseInt(info[info.length-2]);
-                    result[0] = Integer.parseInt(info[info.length-1]);
+                    result[0] = Integer.parseInt(info[3]);
+                    result[1] = Integer.parseInt(info[4]);
                 }
             }
         } catch (IOException e) {
@@ -31,30 +31,15 @@ public class DotBracketReader {
         } return result;
     }
 
-    public int readMicroexonLengh(String name, String filepath){
-        String index = null;
-        try { List<String> allLines = Files.readAllLines(Paths.get(this.filepath));
-            for(String line : allLines){
-                if(line.contains(name)){
-                    index = line.substring(line.lastIndexOf("\t"));
-                }
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        assert index != null;
-        return Integer.parseInt(index);
-    }
-
 
     public List<Sequence> readBractket(String filepath){
         DotBracketReader locationInfo = new DotBracketReader(filepath);
         List<Sequence> result = new ArrayList<>();
         try { List<String> allLines = Files.readAllLines(Paths.get(this.filepath));
-            for (int i = 0; i < allLines.size(); i = i+3) {
+            for (int i = 0; i < allLines.size()-1; i+=3) {
                 Sequence gene = new Sequence(allLines.get(i), allLines.get(i+2));
                 if (gene.getType().equals("C1+A+C2")){
-                    int[] Info = locationInfo.readLocation(gene.getName(), this.filepath);
+                    int[] Info = locationInfo.readLocation(gene.getName());
                     gene = new SequenceWithMicroexon(allLines.get(i), allLines.get(i+2), Info);
                 } result.add(gene);
             }
