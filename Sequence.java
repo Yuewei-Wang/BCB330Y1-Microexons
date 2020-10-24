@@ -17,11 +17,12 @@ public class Sequence {
     private int A_length;
 
     public Sequence(String title, String seq){
-        Name = title.substring(title.indexOf("  ")+2, title.lastIndexOf(" "));
-        Type = title.substring(title.lastIndexOf(" "));
+        String[] titleline = title.split("  ");
+        Name = title.substring(title.indexOf("  ")+2,title.lastIndexOf(' '));
+        Type = title.substring(title.lastIndexOf(' ')+1);
         Seq = seq;
-        seq = title.substring(title.indexOf(">ENERGY = -")+1, title.indexOf("  "));
-        Energy = Double.parseDouble(seq)*-1;
+        String energy = title.substring(title.indexOf('-')+1,title.indexOf("  "));
+        Energy = Double.parseDouble(energy)*-1;
     }
 
     public void setSeq(String seq) {

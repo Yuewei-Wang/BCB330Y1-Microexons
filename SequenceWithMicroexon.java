@@ -7,4 +7,12 @@ public class SequenceWithMicroexon extends Sequence{
         this.A_length = locationInfo[0];
         this.A_index = locationInfo[1];
     }
+
+    public int getA_index() {
+        return A_index;
+    }
+
+    public int getA_length() {
+        return A_length;
+    }
 }
