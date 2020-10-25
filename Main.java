@@ -1,5 +1,6 @@
 import java.io.IOException;
 import java.util.List;
+import java.util.HashMap;
 
 
 public class Main {
@@ -17,27 +18,45 @@ public class Main {
 
     public double returnPercentage(List<SequenceWithMicroexon> AllGene){
         int count = 0;
+        if (AllGene.size() == 0){
+            throw new IllegalArgumentException("The list has no sequence!");
+        }
         for (int i = 0; i < AllGene.size(); i++){
             SequenceWithMicroexon gene = AllGene.get(i);
             int A_index = gene.getA_index();
             int A_length = gene.getA_length();
             int A_end = A_index + A_length;
             String seq = gene.getSeq();
+            if (seq.substring(A_index, A_end).contains("(") || seq.substring(A_index, A_end).contains(")")){
+                count ++;
+            }
+        }
+
+        return (double)count / AllGene.size();
+    }
+
+    public HashMap<String, Double> exonPercentage(List<SequenceWithMicroexon> AllGene){
+        HashMap<String, Double> result = new HashMap<>();
+        for (int i = 0; i < AllGene.size(); i++){
+            int count = 0;
+            SequenceWithMicroexon gene = AllGene.get(i);
+            String title = gene.getName();
+            int A_index = gene.getA_index();
+            int A_length = gene.getA_length();
+            int A_end = A_index + A_length;
+            String seq = gene.getSeq();
             for (int j = A_index; j < A_end; j++){
-                if (seq.contains("(") || seq.contains(")")){
+                if (seq.charAt(j) == '(' || seq.charAt(j) == ')'){
                     count ++;
                 }
             }
-
-            }
-        if (AllGene.size() == 0){
-            throw new IllegalArgumentException("The list has no sequence!");
-        }
-        else {
-            return (double)count / AllGene.size();
-        }
+            double percentage = (double)count/A_length;
+            result.put(title, percentage);
 
         }
+        return result;
+    }
+
 
 
     public static void main(String[] args) throws IOException {
