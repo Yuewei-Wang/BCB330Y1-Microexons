@@ -1,4 +1,6 @@
+import java.awt.*;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.HashMap;
 
@@ -66,12 +68,22 @@ public class Main {
         DotBracketReader s = new DotBracketReader(sequences);
 
         List<Sequence> all = s.readBractket(table);
-        System.out.println(all.get(0).getSeq());
-        System.out.println(all.get(0).getName());
-        System.out.println(all.get(0).getType());
-        System.out.println(all.get(0).getEnergy());
+        //System.out.println(all.get(0).getSeq());
+        //System.out.println(all.get(0).getName());
+        //System.out.println(all.get(0).getType());
+        //System.out.println(all.get(0).getEnergy());
+        List<SequenceWithMicroexon> exonSeq = new ArrayList<>();
+        for (int i = 0; i < all.size(); i ++){
+            if (all.get(i).getType().equals("C1+A+C2")){
+                exonSeq.add((SequenceWithMicroexon)all.get(i));
+            }
+        }
 
-
+        Main m = new Main();
+        HashMap<String, Double> result = m.exonPercentage(exonSeq);
+        double percentage = m.returnPercentage(exonSeq);
+        System.out.println(percentage);
+        System.out.println(result);
 
     }
 }
