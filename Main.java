@@ -12,12 +12,6 @@ public class Main {
 
     }
 
-    public void readSequence(String filename1, String filename2){
-        DotBracketReader sequenceFile = new DotBracketReader(filename1);
-        DotBracketReader locationFile = new DotBracketReader(filename2);
-        List<Sequence> AllGene = sequenceFile.readBractket(locationFile.getFilepath());
-    }
-
     public double returnPercentage(List<SequenceWithMicroexon> AllGene){
         int count = 0;
         if (AllGene.size() == 0){
@@ -39,20 +33,20 @@ public class Main {
 
     public HashMap<String, Double> exonPercentage(List<SequenceWithMicroexon> AllGene){
         HashMap<String, Double> result = new HashMap<>();
-        for (int i = 0; i < AllGene.size(); i++){
+        for (SequenceWithMicroexon sequenceWithMicroexon : AllGene) {
             int count = 0;
-            SequenceWithMicroexon gene = AllGene.get(i);
+            SequenceWithMicroexon gene = sequenceWithMicroexon;
             String title = gene.getName();
             int A_index = gene.getA_index();
             int A_length = gene.getA_length();
             int A_end = A_index + A_length;
             String seq = gene.getSeq();
-            for (int j = A_index; j < A_end; j++){
-                if (seq.charAt(j) == '(' || seq.charAt(j) == ')'){
-                    count ++;
+            for (int j = A_index-1; j < A_end-1; j++) {
+                if (seq.charAt(j) == '(' || seq.charAt(j) == ')') {
+                    count++;
                 }
             }
-            double percentage = (double)count/A_length;
+            double percentage = (double) count / A_length;
             result.put(title, percentage);
 
         }
@@ -62,28 +56,40 @@ public class Main {
 
 
     public static void main(String[] args) throws IOException {
-        String sequences = "/Users/floraw/Documents/HumanNeuronGenes/allC1+A+C2.txt";
-        String table = "/Users/floraw/Documents/HumanNeuronGenes/microexon-locations.txt";
+        String HumanSequence = "/Users/floraw/Documents/HumanNeuronGenes/allHumanC1+A+C2.txt";
+        String HumanTable = "/Users/floraw/Documents/HumanNeuronGenes/HumanALocation.txt";
+        String MouseSequence = "/Users/floraw/Documents/MouseNeuronGenes/allMouseC1+A+C2.txt";
+        String MouseTable = "/Users/floraw/Documents/MouseNeuronGenes/MouseALocation.txt";
 
-        DotBracketReader s = new DotBracketReader(sequences);
-
-        List<Sequence> all = s.readBractket(table);
-        //System.out.println(all.get(0).getSeq());
-        //System.out.println(all.get(0).getName());
-        //System.out.println(all.get(0).getType());
-        //System.out.println(all.get(0).getEnergy());
+        DotBracketReader hs = new DotBracketReader(HumanSequence);
+        List<Sequence> allHuman = hs.readBractket(HumanTable);
+        System.out.println(allHuman.size()); //58 pairs
         List<SequenceWithMicroexon> exonSeq = new ArrayList<>();
-        for (int i = 0; i < all.size(); i ++){
-            if (all.get(i).getType().equals("C1+A+C2")){
-                exonSeq.add((SequenceWithMicroexon)all.get(i));
+        for (Sequence sequence : allHuman) {
+            if (sequence.getType().equals("C1+A+C2")) {
+                exonSeq.add((SequenceWithMicroexon) sequence);
+            }
+        }
+        //System.out.println(exonSeq.size()); //58 pairs
+
+        DotBracketReader ms = new DotBracketReader(MouseSequence);
+        List<Sequence> allMouse = ms.readBractket(MouseTable);
+        // System.out.println(allMouse.size()); //53 pairs
+        List<SequenceWithMicroexon> exonSeq2 = new ArrayList<>();
+        for (Sequence sequence : allMouse) {
+            if (sequence.getType().equals("C1+A+C2")) {
+                exonSeq2.add((SequenceWithMicroexon) sequence);
             }
         }
 
+
         Main m = new Main();
-        HashMap<String, Double> result = m.exonPercentage(exonSeq);
-        double percentage = m.returnPercentage(exonSeq);
-        System.out.println(percentage);
-        System.out.println(result);
+        System.out.println("Human genes");
+        System.out.println(m.returnPercentage(exonSeq));
+        System.out.println(m.exonPercentage(exonSeq));
+        System.out.println("Mouse genes");
+        System.out.println(m.returnPercentage(exonSeq2));
+        System.out.println(m.exonPercentage(exonSeq2));
 
     }
 }
