@@ -1,0 +1,194 @@
+Table S3					
+#MIC	Gene name	Species	Length	1st Microexon index	
+1	ABI1	Human	15	178	
+2	AGRN	Human	12	113	
+3	ANK2	Human	12	146	
+4	AP1G1	Human	9	78	
+5	AP1S2	Human	9	139	
+6	APBB1	Human	6	129	
+7	APBB2	Human	6	172	
+8	ASAP1	Human	9	124	
+9	ASAP2	Human	9	88	
+10	ATL1	Human	15	433	
+11	ATL2	Human	15	433	
+12	CHCHD3	Human	15	119	
+13	CYTH2	Human	3	113	
+14	DNM1	Human	12	53	
+15	DOCK10	Human	6	98	
+16	DOCK9	Human	8	140	
+17	DOCK7	Human	15	133	
+18	DTNA	Human	9	126	
+19	EMC1	Human	9	124	
+20	ERC1	Human	12	195	
+21	ERGIC3	Human	15	59	
+22	EVI5	Human	10	97	
+23	FRY	Human	9	172	
+24	FRYL	Human	9	178	
+25	GDPD5	Human	15	84	
+26	GRAMD1A	Human	12	89	
+27	GULP1	Human	11	96	
+28	HOOK3	Human	6	49	
+29	ITSN1	Human	15	127	
+30	MACF1	Human	9	209	
+31	MICU1	Human	6	45	
+32	MICU1	Human	12	45	
+33	MON2	Human	3	103	
+34	MYO18A	Human	12	146	
+35	PTK2	Human	9	108	
+36	PTPRD_1	Human	12	162	
+37	PTPRD_2	Human	12	112	
+38	PTPRD_3	Human	9	190	
+39	SH3GLB2_1	Human	15	102	
+40	SH3GLB2_2	Human	12	94	
+41	SLC43A2	Human	12	148	
+42	SNX2	Human	12	145	
+43	SPAG9	Human	12	123	
+44	SPOCK3	Human	9	190	
+45	SPTAN1	Human	15	164	
+46	VAV2_1	Human	15	104	
+47	VAV2_2	Human	15	134	
+48	VDAC3	Human	3	51	
+49	ANK3	Human	12	125	
+50	MADD	Human	9	108	
+51	ENAH	Human	12	179	
+52	FNBP1	Human	15	199	
+53	FNBP1L	Human	15	160	
+54	SSR1	Human	15	95	
+55	CLIP1	Human	6	51	
+56	DCTN2	Human	9	70	
+57	CCDC64	Human	9	118	
+58	VPS29	Human	12	144	
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
