@@ -5,10 +5,14 @@ public class Sequence {
     private double Energy;
 
     public Sequence(String title, String seq){
-        Name = title.substring(title.indexOf("  ")+2,title.lastIndexOf(' '));
-        Type = title.substring(title.lastIndexOf(' ')+1);
+        String[] contents = title.split("  ");
+        String[] energyInfo = contents[0].split(" ");
+        String[] nameInfo = contents[1].split(" ");
+        Name = nameInfo[0];
+        Type = nameInfo[1];
+        //Species = nameInfo[2];
         Seq = seq;
-        String energy = title.substring(title.indexOf('-')+1,title.indexOf("  "));
+        String energy = energyInfo[2].substring(1);
         Energy = Double.parseDouble(energy)*-1;
     }
 
