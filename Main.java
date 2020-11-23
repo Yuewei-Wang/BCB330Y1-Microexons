@@ -60,6 +60,8 @@ public class Main {
         String HumanTable = "/Users/floraw/Documents/HumanNeuronGenes/HumanALocation.txt";
         String MouseSequence = "/Users/floraw/Documents/MouseNeuronGenes/allMouseC1+A+C2.txt";
         String MouseTable = "/Users/floraw/Documents/MouseNeuronGenes/MouseALocation.txt";
+        String ChickenSequence = "/Users/songchenning/Desktop/allChickenC1+A+C2.txt";
+        String ChickenTable = "/Users/songchenning/Desktop/ChickenALocation.txt";
 
         DotBracketReader hs = new DotBracketReader(HumanSequence);
         List<Sequence> allHuman = hs.readBractket(HumanTable);
@@ -82,6 +84,16 @@ public class Main {
             }
         }
 
+        DotBracketReader cs = new DotBracketReader(ChickenSequence);
+        List<Sequence> allChicken = cs.readBractket(ChickenTable);
+        // System.out.println(allChicken.size());
+        List<SequenceWithMicroexon> exonSeq3 = new ArrayList<>();
+        for (Sequence sequence : allChicken) {
+            if (sequence.getType().equals("C1+A+C2")) {
+                exonSeq3.add((SequenceWithMicroexon) sequence);
+            }
+        }
+
 
         Main m = new Main();
         System.out.println("Human genes");
@@ -90,6 +102,9 @@ public class Main {
         System.out.println("Mouse genes");
         System.out.println(m.returnPercentage(exonSeq2));
         System.out.println(m.exonPercentage(exonSeq2));
+        System.out.println("Chicken genes");
+        System.out.println(m.returnPercentage(exonSeq3));
+        System.out.println(m.exonPercentage(exonSeq3));
 
     }
 }
