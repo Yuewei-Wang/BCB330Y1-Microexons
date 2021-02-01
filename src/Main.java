@@ -1,3 +1,5 @@
+package src;
+
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
@@ -62,10 +64,11 @@ public class Main {
         for (ExonsCoordinates each : allAExons){
             Integer[] junctions = cr.get4Junctions(each);
             allTranscriptJunction.put(each, junctions);
-            System.out.println(each.getGeneName() +"(" + each.getTranscriptID() +"): " + junctions[1] + ", "
-                    + junctions[2] + ", " + junctions[3] + ", " + junctions[4] + ", " + junctions[5] +
-                    ", " +junctions[6]+"\n");
+            //System.out.println(each.getGeneName() +"(" + each.getTranscriptID() +"): " + junctions[1] + ", "
+                   // + junctions[2] + ", " + junctions[3] + ", " + junctions[4] + ", " + junctions[5] +
+                    //", " +junctions[6]+"\n");
         }
+
         return allTranscriptJunction;
     }
 
@@ -121,7 +124,11 @@ public class Main {
         System.out.println(m.returnPercentage(exonSeq3));
         System.out.println(m.exonPercentage(exonSeq3));
          */
-
-        m.getJunctions("mart_export_58genes.txt", exonSeq);
+        HashMap<ExonsCoordinates, Integer[]> result = m.getJunctions("mart_export_58genes.txt", exonSeq);
+        System.out.println(result.isEmpty());
+        for (ExonsCoordinates key : result.keySet()) {
+            System.out.println("hello");
+            //System.out.println(result.get(key).toString());
+        }
     }
 }

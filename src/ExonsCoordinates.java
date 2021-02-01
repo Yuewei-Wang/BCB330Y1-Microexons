@@ -1,3 +1,5 @@
+package src;
+
 public class ExonsCoordinates {
     private String geneName;
     private String transcriptID;
@@ -41,5 +43,13 @@ public class ExonsCoordinates {
 
     public int getStrand() {
         return strand;
+    }
+
+    public int getMicroexonsLength(){ return microexonsLength;}
+
+    @Override
+    public String toString(){
+        return String.format(this.geneName + "," + this.transcriptID + "," + this.microexonsLength +
+        "," + this.exonRank + "," + this.start + "," + this.end + "," + this.strand);
     }
 }

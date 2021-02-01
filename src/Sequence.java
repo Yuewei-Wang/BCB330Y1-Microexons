@@ -1,3 +1,5 @@
+package src;
+
 public class Sequence {
     private String Name;
     private String Type;

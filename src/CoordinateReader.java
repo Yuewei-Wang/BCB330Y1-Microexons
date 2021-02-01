@@ -1,3 +1,5 @@
+package src;
+
 import javax.sound.midi.Sequence;;
 import java.io.File;
 import java.io.IOException;
@@ -62,13 +64,13 @@ public class CoordinateReader {
     public List<ExonsCoordinates> readTranscripts(HashMap<String, Integer> allLength) {
         List<ExonsCoordinates> result = new ArrayList<>();
         try { List<String> allLines = Files.readAllLines(Paths.get(this.filepath));
-            for (int j=1; j<allLines.size(); j++){
+            for (int j=1; j < allLines.size(); j++){
                 String[] eachExon = allLines.get(j).split(",");
-                int ALength = allLength.get(Integer.parseInt(eachExon[this.headerFormat[1]]));
-                int exonLength = Integer.parseInt(eachExon[this.headerFormat[3]]) -
+                Integer ALength = allLength.get(eachExon[this.headerFormat[1]]);
+                Integer exonLength = Integer.parseInt(eachExon[this.headerFormat[3]]) -
                         Integer.parseInt(eachExon[this.headerFormat[2]]) + 1;
-                if (exonLength == ALength){
-                    int rank = Integer.parseInt(eachExon[this.headerFormat[4]]);
+                if (exonLength.equals(ALength)){
+                    Integer rank = Integer.parseInt(eachExon[this.headerFormat[4]]);
                     ExonsCoordinates transcript = new ExonsCoordinates(eachExon[this.headerFormat[1]],
                             eachExon[this.headerFormat[0]], exonLength, rank,
                             Integer.parseInt(eachExon[this.headerFormat[2]]),
