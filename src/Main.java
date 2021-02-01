@@ -62,6 +62,7 @@ public class Main {
         for (ExonsCoordinates each : allAExons){
             Integer[] junctions = cr.get4Junctions(each);
             System.out.println(each.getGeneName());
+            System.out.println(each.getTranscriptID());
             System.out.println("(" + junctions[0] + ") + ("+ junctions[1] + ") + ("+ junctions[2]
                     + ") + ("+ junctions[3] + ") + ("+ junctions[4] + ") + ("+ junctions[5] + ")\n");
         }
