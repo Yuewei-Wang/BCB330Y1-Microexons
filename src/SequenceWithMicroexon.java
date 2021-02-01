@@ -1,4 +1,4 @@
-package src;
+
 
 public class SequenceWithMicroexon extends Sequence{
     private int A_index;

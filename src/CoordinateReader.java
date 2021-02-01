@@ -1,4 +1,4 @@
-package src;
+
 
 import javax.sound.midi.Sequence;;
 import java.io.File;
@@ -32,9 +32,9 @@ public class CoordinateReader {
                     hf[0] = i;
                 } else if (info[i].equalsIgnoreCase("Gene name")){
                     hf[1] = i;
-                } else if (info[i].equalsIgnoreCase("Gene start (bp)")){
+                } else if (info[i].equalsIgnoreCase("Exon region start (bp)")){
                     hf[2] = i;
-                } else if (info[i].equalsIgnoreCase("Gene end (bp)")){
+                } else if (info[i].equalsIgnoreCase("Exon region end (bp)")){
                     hf[3] = i;
                 } else if (info[i].equalsIgnoreCase("Exon rank in transcript")) {
                     hf[4] = i;
@@ -67,10 +67,10 @@ public class CoordinateReader {
             for (int j=1; j < allLines.size(); j++){
                 String[] eachExon = allLines.get(j).split(",");
                 Integer ALength = allLength.get(eachExon[this.headerFormat[1]]);
-                Integer exonLength = Integer.parseInt(eachExon[this.headerFormat[3]]) -
-                        Integer.parseInt(eachExon[this.headerFormat[2]]) + 1;
+                Integer exonLength = (Integer.valueOf(eachExon[this.headerFormat[3]])) -
+                        (Integer.valueOf(eachExon[this.headerFormat[2]])) + 1;
                 if (exonLength.equals(ALength)){
-                    Integer rank = Integer.parseInt(eachExon[this.headerFormat[4]]);
+                    int rank = Integer.parseInt(eachExon[this.headerFormat[4]]);
                     ExonsCoordinates transcript = new ExonsCoordinates(eachExon[this.headerFormat[1]],
                             eachExon[this.headerFormat[0]], exonLength, rank,
                             Integer.parseInt(eachExon[this.headerFormat[2]]),
@@ -90,14 +90,13 @@ public class CoordinateReader {
      * find the C1 and C2 information according to microexon information for a transcript
      * @return a list collecting the three exons involved in junction regions
      * each elements are:
-     * transcriptID, start of C1, end of C1, start of A, end of A, start of C2, end of C2
+     * start of C1, end of C1, start of A, end of A, start of C2, end of C2
      */
     public Integer[] get4Junctions(ExonsCoordinates A){
-        Integer[] result = new Integer[7];
+        Integer[] result = {0,0,0,0,0,0};
         int transcriptI = this.headerFormat[0];
-        result[0] = transcriptI;
-        result[3] = A.getStart();
-        result[4] = A.getEnd();
+        result[2] = A.getStart();
+        result[3] = A.getEnd();
         int rankI = this.headerFormat[4];
         try { List<String> allLines = Files.readAllLines(Paths.get(this.filepath));
             for (int i=1; i<allLines.size(); i++){
@@ -105,11 +104,11 @@ public class CoordinateReader {
                 int rank = Integer.parseInt(eachExon[rankI]);
                 String transcript = eachExon[transcriptI];
                 if (A.getTranscriptID().equalsIgnoreCase(transcript) && A.getExonRank()== rank-1){
-                    result[1] = Integer.parseInt(eachExon[this.headerFormat[2]]);
-                    result[2] = Integer.parseInt(eachExon[this.headerFormat[3]]);
+                    result[0] = Integer.parseInt(eachExon[this.headerFormat[2]]);
+                    result[1] = Integer.parseInt(eachExon[this.headerFormat[3]]);
                 } else if (A.getTranscriptID().equalsIgnoreCase(transcript) && A.getExonRank()== rank+1){
-                    result[5] = Integer.parseInt(eachExon[this.headerFormat[2]]);
-                    result[6] = Integer.parseInt(eachExon[this.headerFormat[3]]);
+                    result[4] = Integer.parseInt(eachExon[this.headerFormat[2]]);
+                    result[5] = Integer.parseInt(eachExon[this.headerFormat[3]]);
                 }
             }
         } catch (IOException e) {

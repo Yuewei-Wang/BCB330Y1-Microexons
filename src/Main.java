@@ -1,6 +1,3 @@
-package src;
-
-import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -60,15 +57,14 @@ public class Main {
         CoordinateReader cr = new CoordinateReader(filename);
         HashMap<String, Integer> allALength  = cr.getLength(allSeq);
         List<ExonsCoordinates> allAExons = cr.readTranscripts(allALength);
+        //System.out.println(allAExons.get(0).getGeneName());
         HashMap<ExonsCoordinates, Integer[]> allTranscriptJunction = new HashMap<>();
         for (ExonsCoordinates each : allAExons){
             Integer[] junctions = cr.get4Junctions(each);
-            allTranscriptJunction.put(each, junctions);
-            //System.out.println(each.getGeneName() +"(" + each.getTranscriptID() +"): " + junctions[1] + ", "
-                   // + junctions[2] + ", " + junctions[3] + ", " + junctions[4] + ", " + junctions[5] +
-                    //", " +junctions[6]+"\n");
+            System.out.println(each.getGeneName());
+            System.out.println("(" + junctions[0] + ") + ("+ junctions[1] + ") + ("+ junctions[2]
+                    + ") + ("+ junctions[3] + ") + ("+ junctions[4] + ") + ("+ junctions[5] + ")\n");
         }
-
         return allTranscriptJunction;
     }
 
@@ -115,8 +111,8 @@ public class Main {
 
         Main m = new Main();
         System.out.println("Human genes");
-        System.out.println(m.returnPercentage(exonSeq));
-        System.out.println(m.exonPercentage(exonSeq));
+        //System.out.println(m.returnPercentage(exonSeq));
+        //System.out.println(m.exonPercentage(exonSeq));
         /*System.out.println("Mouse genes");
         System.out.println(m.returnPercentage(exonSeq2));
         System.out.println(m.exonPercentage(exonSeq2));
@@ -124,11 +120,8 @@ public class Main {
         System.out.println(m.returnPercentage(exonSeq3));
         System.out.println(m.exonPercentage(exonSeq3));
          */
-        HashMap<ExonsCoordinates, Integer[]> result = m.getJunctions("mart_export_58genes.txt", exonSeq);
-        System.out.println(result.isEmpty());
-        for (ExonsCoordinates key : result.keySet()) {
-            System.out.println("hello");
-            //System.out.println(result.get(key).toString());
-        }
+
+        m.getJunctions("mart_export_58genes.txt", exonSeq);
+
     }
 }
