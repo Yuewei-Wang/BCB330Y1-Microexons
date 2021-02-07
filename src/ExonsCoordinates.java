@@ -7,10 +7,11 @@ public class ExonsCoordinates {
     private int start;
     private int end;
     private int strand; //positive or negative
+    private String exonID;
 
     public ExonsCoordinates(String geneName, String transcriptID,
                             int microexonsLength, int exonRank,
-                            int start, int end, int strand){
+                            int start, int end, int strand, String exonID){
         this.geneName = geneName;
         this.transcriptID = transcriptID;
         this.microexonsLength = microexonsLength;
@@ -18,6 +19,7 @@ public class ExonsCoordinates {
         this.start = start;
         this.end = end;
         this.strand = strand;
+        this.exonID = exonID;
     }
 
     public String getGeneName() {
@@ -45,5 +47,7 @@ public class ExonsCoordinates {
     }
 
     public int getMicroexonsLength(){ return microexonsLength;}
+
+    public String getExonID(){return exonID;}
 
 }

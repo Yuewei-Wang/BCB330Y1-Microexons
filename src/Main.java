@@ -1,5 +1,7 @@
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.HashMap;
@@ -17,14 +19,13 @@ public class Main {
         if (AllGene.size() == 0){
             throw new IllegalArgumentException("The list has no sequence!");
         }
-        for (int i = 0; i < AllGene.size(); i++){
-            SequenceWithMicroexon gene = AllGene.get(i);
+        for (SequenceWithMicroexon gene : AllGene) {
             int A_index = gene.getA_index();
             int A_length = gene.getA_length();
             int A_end = A_index + A_length;
             String seq = gene.getSeq();
-            if (seq.substring(A_index, A_end).contains("(") || seq.substring(A_index, A_end).contains(")")){
-                count ++;
+            if (seq.substring(A_index, A_end).contains("(") || seq.substring(A_index, A_end).contains(")")) {
+                count++;
             }
         }
 
@@ -53,20 +54,51 @@ public class Main {
         return result;
     }
 
-    public HashMap<ExonsCoordinates, Integer[]> getJunctions(String filename, List<SequenceWithMicroexon> allSeq){
+    public void getJunctions(String filename, List<SequenceWithMicroexon> allSeq) throws FileNotFoundException {
         CoordinateReader cr = new CoordinateReader(filename);
         HashMap<String, Integer> allALength  = cr.getLength(allSeq);
         List<ExonsCoordinates> allAExons = cr.readTranscripts(allALength);
-        //System.out.println(allAExons.get(0).getGeneName());
         HashMap<ExonsCoordinates, Integer[]> allTranscriptJunction = new HashMap<>();
-        for (ExonsCoordinates each : allAExons){
-            Integer[] junctions = cr.get4Junctions(each);
-            System.out.println(each.getGeneName());
-            System.out.println(each.getTranscriptID());
-            System.out.println("(" + junctions[0] + ") + ("+ junctions[1] + ") + ("+ junctions[2]
-                    + ") + ("+ junctions[3] + ") + ("+ junctions[4] + ") + ("+ junctions[5] + ")\n");
+        try (PrintWriter out = new PrintWriter("out_Microexons.csv")) {
+            StringBuilder sb = new StringBuilder();
+            sb.append("Gene Name");
+            sb.append(',');
+            sb.append("Transcript ID");
+            sb.append(',');
+            sb.append("Exon ID");
+            sb.append(',');
+            sb.append("C1-intron junction");
+            sb.append(',');
+            sb.append("intro-A junction");
+            sb.append(',');
+            sb.append("A-intron junction");
+            sb.append(',');
+            sb.append("intron-C2 junction");
+            sb.append(',');
+            sb.append("strand");
+            sb.append('\n');
+            for (ExonsCoordinates each : allAExons){
+                Integer[] junctions = cr.get4Junctions(each);
+                sb.append(each.getGeneName());
+                sb.append(',');
+                sb.append(each.getTranscriptID());
+                sb.append(',');
+                sb.append(each.getExonID());
+                sb.append(',');
+                sb.append(junctions[1]);
+                sb.append(',');
+                sb.append(junctions[2]);
+                sb.append(',');
+                sb.append(junctions[3]);
+                sb.append(',');
+                sb.append(junctions[4]);
+                sb.append(',');
+                sb.append(each.getStrand());
+                sb.append('\n');
+            }out.write(sb.toString());
+        } catch (FileNotFoundException o){
+            o.fillInStackTrace();
         }
-        return allTranscriptJunction;
     }
 
 

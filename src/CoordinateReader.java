@@ -24,7 +24,7 @@ public class CoordinateReader {
      * find the header format and set the index collection as variable
      */
     private void setHeaderFormat(){
-        Integer[] hf = new Integer[6];
+        Integer[] hf = new Integer[7];
         try { List<String> allLines = Files.readAllLines(Paths.get(this.filepath));
             String[] info = allLines.get(0).split(",");
             for (int i = 0; i< info.length; i++){
@@ -40,6 +40,8 @@ public class CoordinateReader {
                     hf[4] = i;
                 } else if (info[i].equalsIgnoreCase("Strand")){
                     hf[5] = i;
+                } else if (info[i].equalsIgnoreCase("Exon stable ID")){
+                    hf[6] = i;
                 }
             }
         } catch (IOException e) {
@@ -75,7 +77,8 @@ public class CoordinateReader {
                             eachExon[this.headerFormat[0]], exonLength, rank,
                             Integer.parseInt(eachExon[this.headerFormat[2]]),
                             Integer.parseInt(eachExon[this.headerFormat[3]]),
-                            Integer.parseInt(eachExon[this.headerFormat[5]]));
+                            Integer.parseInt(eachExon[this.headerFormat[5]]),
+                            eachExon[this.headerFormat[6]]);
                     result.add(transcript);
                 }
             }
