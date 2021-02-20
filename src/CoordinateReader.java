@@ -107,16 +107,27 @@ public class CoordinateReader {
                 int rank = Integer.parseInt(eachExon[rankI]);
                 String transcript = eachExon[transcriptI];
                 if (A.getTranscriptID().equalsIgnoreCase(transcript) && A.getExonRank()== rank-1){
-                    result[0] = Integer.parseInt(eachExon[this.headerFormat[2]]);
-                    result[1] = Integer.parseInt(eachExon[this.headerFormat[3]]);
+                    if (A.getStrand() == -1){
+                        result[0] = Integer.parseInt(eachExon[this.headerFormat[2]]);
+                        result[1] = Integer.parseInt(eachExon[this.headerFormat[3]]);
+                    } else {
+                        result[4] = Integer.parseInt(eachExon[this.headerFormat[2]]);
+                        result[5] = Integer.parseInt(eachExon[this.headerFormat[3]]);
+                    }
                 } else if (A.getTranscriptID().equalsIgnoreCase(transcript) && A.getExonRank()== rank+1){
-                    result[4] = Integer.parseInt(eachExon[this.headerFormat[2]]);
-                    result[5] = Integer.parseInt(eachExon[this.headerFormat[3]]);
+                    if (A.getStrand() == -1){
+                        result[4] = Integer.parseInt(eachExon[this.headerFormat[2]]);
+                        result[5] = Integer.parseInt(eachExon[this.headerFormat[3]]);
+                    } else {
+                        result[0] = Integer.parseInt(eachExon[this.headerFormat[2]]);
+                        result[1] = Integer.parseInt(eachExon[this.headerFormat[3]]);
+                    }
                 }
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
+
         return result;
     }
 
