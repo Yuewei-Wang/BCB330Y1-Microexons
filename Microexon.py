@@ -3,20 +3,17 @@ import gzip
 from Bio import SeqIO
 
 
-chromo_number_set = dict()
-chromo_number_set["ABI1"] = "10"
-chromo_number_set["ANK2"] = "4"
-chromo_number_set["AGRN"] = "1"
-chromo_number_set["AP1G1"] = "16"
-chromo_number_set["ANK3"] = "10"
-
-with gzip.open("Homo_sapiens.GRCh38.dna.chromosome.10.fa.gz", "rt") as fasta_file:
-    for record in SeqIO.parse(fasta_file, "fasta"):
-        print(record.seq[26771075-1:26771089])  # coordinate for A of ABI1
-        reverse = record.reverse_complement("10", "reverse Homo species "
-                                                  "chromosome 10 dna")
-        print(reverse.seq[len(reverse.seq)-26771089:
-                          len(reverse.seq)-26771075+1])
+chromo_number_set = {"ABI1": "10", "ANK2": "4", "AGRN": "1", "AP1G1": "16",
+                     "ANK3": "10", "AP1S2": "X", "APBB1": "11", "APBB2": "4",
+                     "ASAP1": "8", "ASAP2": "2", "ATL1": "14", "ATL2": "2",
+                     "CHCHD3": "7", "CLIP1": "12", "CYTH2": "19", "DCTN2": "12",
+                     "DNM1": "9", "DOCK7": "1", "DOCK9": "13", "DTNA": "18",
+                     "EMC1": "12", "ENAH": "1", "ERC1": "12", "ERGIC3": "20",
+                     "FNBP1": "9", "FNBP1L": "1", "FRY": "13", "FRYL": "4",
+                     "GDPD5": "11", "GRAMD1A": "19", "GULP1": "2", "HOOK3": "8",
+                     "ITSN1": "21", "MACF1": "1", "MADD": "11", "MON2": "12",
+                     "MYO18A": "17", "PTK2": "8", "SLC43A2": "17", "SPAG9": "17",
+                     "SPTAN1": "9", "SSR1": "6", "VDAC3": "8", "VPS29": "12"}
 
 with open("out_Microexons.csv", 'r') as csv_file:
     new_dict = dict()
@@ -29,7 +26,7 @@ with open("out_Microexons.csv", 'r') as csv_file:
         elements = row.split(",")
         if elements[0] not in gene_name_list:
             gene_name_list.append(elements[0])
-        new_dict[elements[0]] = elements[3:]  #key is name, unique, what if repeated exoncoor
+        new_dict[elements[0]] = elements[3:]
         line_count += 1
 print("Read exon coordinates file result: ")
 print(csv_file.closed)
@@ -44,21 +41,15 @@ def find_seq_by_coordinate(gene_name, chr_number):
     seq_file = "Homo_sapiens.GRCh38.dna.chromosome." + chr_number +".fa.gz"
     with gzip.open(seq_file, "rt") as fasta_file:
         for record in SeqIO.parse(fasta_file, "fasta"):
-            if strand == "1\n" or strand == "1":
-                first_junction = record.seq[c1_intron-31:c1_intron+29]
-                second_junction = record.seq[intron_a-31:intron_a+29]
-                third_junction = record.seq[a_intron-31:a_intron+29]
-                fourth_junction = record.seq[intron_c2-31:intron_c2+29]
-            else:
-                reverse = record.reverse_complement()
-                first_junction = reverse.seq[len(reverse.seq)-(c1_intron+31):
-                                             len(reverse.seq)-(c1_intron-29)]
-                second_junction = reverse.seq[len(reverse.seq)-(intron_a+31):
-                                              len(reverse.seq)-(intron_a-29)]
-                third_junction = reverse.seq[len(reverse.seq)-(a_intron+31):
-                                             len(reverse.seq)-(a_intron-29)]
-                fourth_junction = reverse.seq[len(reverse.seq)-(intron_c2+31):
-                                              len(reverse.seq)-(intron_c2-29)]
+            first_junction = record.seq[c1_intron-31:c1_intron+29]
+            second_junction = record.seq[intron_a-31:intron_a+29]
+            third_junction = record.seq[a_intron-31:a_intron+29]
+            fourth_junction = record.seq[intron_c2-31:intron_c2+29]
+            if strand == "-1\n" or strand == "-1":
+                first_junction = record.seq[intron_c2-31:intron_c2+29].reverse_complement()
+                second_junction = record.seq[a_intron-31:a_intron+29].reverse_complement()
+                third_junction = record.seq[intron_a-31:intron_a+29].reverse_complement()
+                fourth_junction = record.seq[c1_intron-31:c1_intron+29].reverse_complement()
     if not fasta_file.closed:
         print("ERROR: file is not properly closed after used.")
     return [gene_name, first_junction, second_junction, third_junction,
