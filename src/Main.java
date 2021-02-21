@@ -1,7 +1,8 @@
+package src;
+
+import java.awt.*;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.HashMap;
@@ -19,13 +20,14 @@ public class Main {
         if (AllGene.size() == 0){
             throw new IllegalArgumentException("The list has no sequence!");
         }
-        for (SequenceWithMicroexon gene : AllGene) {
+        for (int i = 0; i < AllGene.size(); i++){
+            SequenceWithMicroexon gene = AllGene.get(i);
             int A_index = gene.getA_index();
             int A_length = gene.getA_length();
             int A_end = A_index + A_length;
             String seq = gene.getSeq();
-            if (seq.substring(A_index, A_end).contains("(") || seq.substring(A_index, A_end).contains(")")) {
-                count++;
+            if (seq.substring(A_index, A_end).contains("(") || seq.substring(A_index, A_end).contains(")")){
+                count ++;
             }
         }
 
@@ -54,57 +56,52 @@ public class Main {
         return result;
     }
 
-    public void getJunctions(String filename, List<SequenceWithMicroexon> allSeq) throws FileNotFoundException {
+    public HashMap<String, Double> junctionPercentage(List<Sequence> AllGene){
+        HashMap<String, Double> result = new HashMap<>();
+        for (Sequence sequence : AllGene) {
+            int count = 0;
+            Sequence gene = sequence;
+            String title = gene.getName();
+            //int A_index = gene.getA_index();
+            //int A_length = gene.getA_length();
+            //int A_end = A_index + A_length;
+            String seq = gene.getSeq();
+            for (int j = 0; j < 60; j++) {
+                if (seq.charAt(j) == '(' || seq.charAt(j) == ')') {
+                    count++;
+                }
+            }
+            double percentage = (double) count / 60;
+            result.put(title, percentage);
+
+        }
+        return result;
+    }
+
+
+    public HashMap<ExonsCoordinates, Integer[]> getJunctions(String filename, List<SequenceWithMicroexon> allSeq){
         CoordinateReader cr = new CoordinateReader(filename);
         HashMap<String, Integer> allALength  = cr.getLength(allSeq);
         List<ExonsCoordinates> allAExons = cr.readTranscripts(allALength);
         HashMap<ExonsCoordinates, Integer[]> allTranscriptJunction = new HashMap<>();
-        try (PrintWriter out = new PrintWriter("out_Microexons.csv")) {
-            StringBuilder sb = new StringBuilder();
-            sb.append("Gene Name");
-            sb.append(',');
-            sb.append("Transcript ID");
-            sb.append(',');
-            sb.append("Exon ID");
-            sb.append(',');
-            sb.append("C1-intron junction");
-            sb.append(',');
-            sb.append("intro-A junction");
-            sb.append(',');
-            sb.append("A-intron junction");
-            sb.append(',');
-            sb.append("intron-C2 junction");
-            sb.append(',');
-            sb.append("strand");
-            sb.append('\n');
-            for (ExonsCoordinates each : allAExons){
-                Integer[] junctions = cr.get4Junctions(each);
-                sb.append(each.getGeneName());
-                sb.append(',');
-                sb.append(each.getTranscriptID());
-                sb.append(',');
-                sb.append(each.getExonID());
-                sb.append(',');
-                sb.append(junctions[1]);
-                sb.append(',');
-                sb.append(junctions[2]);
-                sb.append(',');
-                sb.append(junctions[3]);
-                sb.append(',');
-                sb.append(junctions[4]);
-                sb.append(',');
-                sb.append(each.getStrand());
-                sb.append('\n');
-            }out.write(sb.toString());
-        } catch (FileNotFoundException o){
-            o.fillInStackTrace();
+        for (ExonsCoordinates each : allAExons){
+            Integer[] junctions = cr.get4Junctions(each);
+            allTranscriptJunction.put(each, junctions);
+            //System.out.println(each.getGeneName() +"(" + each.getTranscriptID() +"): " + junctions[1] + ", "
+                   // + junctions[2] + ", " + junctions[3] + ", " + junctions[4] + ", " + junctions[5] +
+                    //", " +junctions[6]+"\n");
         }
+
+        return allTranscriptJunction;
     }
+
+
 
 
     public static void main(String[] args) throws IOException {
         String HumanSequence = "src" + File.separator + "FileReader" + File.separator + "allHumanC1+A+C2.txt";
         String HumanTable = "src" + File.separator + "FileReader" + File.separator + "HumanALocation.txt";
+        String Junction1 = "src" + File.separator + "FileReader" + File.separator + "junction1.txt";
         String MouseSequence = "src" + File.separator + "FileReader" + File.separator + "allMouseC1+A+C2.txt";
         String MouseTable = "src" + File.separator + "FileReader" + File.separator + "MouseALocation.txt";
         String ChickenSequence = "src" + File.separator + "FileReader" + File.separator + "allChickenC1+A+C2.txt";
@@ -119,6 +116,9 @@ public class Main {
                 exonSeq.add((SequenceWithMicroexon) sequence);
             }
         }
+
+        DotBracketReader j1 = new DotBracketReader(Junction1);
+        List<Sequence> junction1 = hs.readBractket(Junction1);
 
 
         /*DotBracketReader ms = new DotBracketReader(MouseSequence);
@@ -144,8 +144,11 @@ public class Main {
 
         Main m = new Main();
         System.out.println("Human genes");
-        //System.out.println(m.returnPercentage(exonSeq));
-        //System.out.println(m.exonPercentage(exonSeq));
+        System.out.println(m.returnPercentage(exonSeq));
+        System.out.println(m.exonPercentage(exonSeq));
+
+        System.out.println("Junction1(RNAstructure) Base Pair Percentage:");
+        System.out.println(m.junctionPercentage(junction1));
         /*System.out.println("Mouse genes");
         System.out.println(m.returnPercentage(exonSeq2));
         System.out.println(m.exonPercentage(exonSeq2));
@@ -153,8 +156,11 @@ public class Main {
         System.out.println(m.returnPercentage(exonSeq3));
         System.out.println(m.exonPercentage(exonSeq3));
          */
-
-        m.getJunctions("mart_export_58genes.txt", exonSeq);
-
+        HashMap<ExonsCoordinates, Integer[]> result = m.getJunctions("mart_export_58genes.txt", exonSeq);
+        System.out.println(result.isEmpty());
+        for (ExonsCoordinates key : result.keySet()) {
+            System.out.println("hello");
+            //System.out.println(result.get(key).toString());
+        }
     }
 }
