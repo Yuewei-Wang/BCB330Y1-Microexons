@@ -1,5 +1,3 @@
-package src;
-
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
@@ -101,11 +99,17 @@ public class Main {
     public static void main(String[] args) throws IOException {
         String HumanSequence = "src" + File.separator + "FileReader" + File.separator + "allHumanC1+A+C2.txt";
         String HumanTable = "src" + File.separator + "FileReader" + File.separator + "HumanALocation.txt";
-        String Junction1 = "src" + File.separator + "FileReader" + File.separator + "junction1.txt";
+
         String MouseSequence = "src" + File.separator + "FileReader" + File.separator + "allMouseC1+A+C2.txt";
         String MouseTable = "src" + File.separator + "FileReader" + File.separator + "MouseALocation.txt";
+
         String ChickenSequence = "src" + File.separator + "FileReader" + File.separator + "allChickenC1+A+C2.txt";
         String ChickenTable = "src" + File.separator + "FileReader" + File.separator + "ChickenALocation.txt";
+
+        String Junction1 = "src" + File.separator + "FileReader" + File.separator + "junction1.txt";
+        String Junction2 = "src" + File.separator + "FileReader" + File.separator + "junction2.txt";
+        String Junction3 = "src" + File.separator + "FileReader" + File.separator + "junction3.txt";
+        String Junction4 = "src" + File.separator + "FileReader" + File.separator + "junction4.txt";
 
         DotBracketReader hs = new DotBracketReader(HumanSequence);
         List<Sequence> allHuman = hs.readBractket(HumanTable);
@@ -118,8 +122,16 @@ public class Main {
         }
 
         DotBracketReader j1 = new DotBracketReader(Junction1);
-        List<Sequence> junction1 = hs.readBractket(Junction1);
+        List<Sequence> junction1 = j1.readBractket(Junction1);
 
+        DotBracketReader j2 = new DotBracketReader(Junction2);
+        List<Sequence> junction2 = j2.readBractket(Junction2);
+
+        DotBracketReader j3 = new DotBracketReader(Junction3);
+        List<Sequence> junction3 = j3.readBractket(Junction3);
+
+        DotBracketReader j4 = new DotBracketReader(Junction4);
+        List<Sequence> junction4 = j4.readBractket(Junction4);
 
         /*DotBracketReader ms = new DotBracketReader(MouseSequence);
         List<Sequence> allMouse = ms.readBractket(MouseTable);
@@ -143,12 +155,21 @@ public class Main {
 
 
         Main m = new Main();
-        System.out.println("Human genes");
-        System.out.println(m.returnPercentage(exonSeq));
-        System.out.println(m.exonPercentage(exonSeq));
+        //System.out.println("Human genes");
+        //System.out.println(m.returnPercentage(exonSeq));
+        //System.out.println(m.exonPercentage(exonSeq));
 
         System.out.println("Junction1(RNAstructure) Base Pair Percentage:");
         System.out.println(m.junctionPercentage(junction1));
+
+        System.out.println("Junction2(RNAstructure) Base Pair Percentage:");
+        System.out.println(m.junctionPercentage(junction2));
+
+        System.out.println("Junction3(RNAstructure) Base Pair Percentage:");
+        System.out.println(m.junctionPercentage(junction3));
+
+        System.out.println("Junction4(RNAstructure) Base Pair Percentage:");
+        System.out.println(m.junctionPercentage(junction4));
         /*System.out.println("Mouse genes");
         System.out.println(m.returnPercentage(exonSeq2));
         System.out.println(m.exonPercentage(exonSeq2));
@@ -156,11 +177,11 @@ public class Main {
         System.out.println(m.returnPercentage(exonSeq3));
         System.out.println(m.exonPercentage(exonSeq3));
          */
-        HashMap<ExonsCoordinates, Integer[]> result = m.getJunctions("mart_export_58genes.txt", exonSeq);
-        System.out.println(result.isEmpty());
-        for (ExonsCoordinates key : result.keySet()) {
-            System.out.println("hello");
+       //HashMap<ExonsCoordinates, Integer[]> result = m.getJunctions("mart_export_58genes.txt", exonSeq);
+        //System.out.println(result.isEmpty());
+        //for (ExonsCoordinates key : result.keySet()) {
+            //System.out.println("hello");
             //System.out.println(result.get(key).toString());
-        }
+       // }
     }
 }
