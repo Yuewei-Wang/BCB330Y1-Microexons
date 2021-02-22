@@ -1,0 +1,132 @@
+>ENERGY = -5.8  ABI1 intron2_c2
+AAAATAAAAGCATTTCTTTCTACATTTTAGCATGGAAATAACCAGCCTGCAAGAACTGGC
+...........((((((..(((.....)))...))))))..((((..........)))).
+>ENERGY = -6.8  ANK2 intron2_C2
+CTGCCAACCTACCAGCCTTCGATCCTTCAGTTCCGACAGGTCTCACACTCTGAGCCATGC
+...............((((((............))).))).((((.....))))......
+>ENERGY = -14.5  AGRN intron2_c2
+TGCACAGCCACTTACCTGGCGTCCCCGCAGGTTCCGCACACCGTCCTCAACCTGAAGGAG
+...((.((((......)))))).((..((((((..((.....))....))))))..))..
+>ENERGY = -3.1  AP1G1 intron2_c2
+TGTTTTTTGATGCATCTTTCTTCTCTGCAGCTTGTGCCCCAATTAGTTCGTATTTTAAAG
+...(((..(((((.............(((.....)))............)))))..))).
+>ENERGY = -9.5  ANK3 intron2_c2
+CTGTTGAATGGTTAACTGTAAATACAACAGCCTCCGCTCCTTCAGTTCGGATAGGTCTTA
+((((((.((............)).))))))((((((...........))))..)).....
+>ENERGY = -5.4  AP1S2 intron2_c2
+TTACCAGAGTCTCACATTTTCCCTCCACAGGAAGCTGAAACCCCACGTAGTGTTCTTGAA
+...........................((((((((((..........)))).))))))..
+>ENERGY = -13.1  APBB1 intron2_c2
+GGAGACACTGAGGTGCCCCTTCCCCAACAGGGACTTTGCCTACGTAGCTCGTGATAAGCT
+.(((..((..((((......((((.....))))....))))..))..)))..........
+>ENERGY = -10.4  APBB2 intron2_c2
+CTAATGGACTGATACATTTTGCTTGCACAGGGATTTTGCTTATGTAGCAAGAGATAAAGA
+..((((........)))).((((.(((.(((.......))).)))))))...........
+>ENERGY = -12.6  ASAP1 intron2_c2
+TTTGTTTAATCTGTAGTTTTTCTTTCCTAGGATTCTCAGAGCCGGCAAGGAGGATACAGC
+..........(((((.((((((((.((..((.(((...))))))).))))))))))))).
+>ENERGY = -4.0  ASAP2 intron2_c2
+ATTAAAAACACACTCTTCACCATTTTTTAGGACTCCCAAATTCGTCAGAGCACAGCTTAT
+..............................(((..........))).((((...))))..
+>ENERGY = -8.3  ATL1 intron2_c2
+TGTTTTATAATTTTGATGCTTTTATTCTAGGCTTTGTACAAGCTTTACAGTGCAGCAGCA
+.((.(((......))).))...........(((((((((..........)))))).))).
+>ENERGY = -5.7  ATL2 intron2_c2
+ATTCTCCTAACAAATCACTTCATGTTTTAGGTGTTTTCCAAACTGTTTGAAGTTACTAGA
+................((((((.......((......))........)))))).......
+>ENERGY = -12.6  CHCHD3 intron2_c2
+ATATAGTATATTCCTCATTTCTTTTTTTAGGCTAGGCAGCTGGAAGAGAAAGACCGAGTG
+........(((((....((((((((((..((((....))))))))))))))....)))))
+>ENERGY = -4.8  CLIP1 intron2_c2
+ATTTTACACATTTTTTTTTTAACAAATCAGATTGATTTCCTAAATTCAGTAATAGTGGAC
+......((((((.....((((..((((((...))))))..))))......))).)))...
+>ENERGY = -20.6  CYTH2 intron2_c2
+CCAGGCCCCCTCCCACCCCTTCCCTTTCAGGGGGCCGGGTGAAGACGTGGAAGCGGCGCT
+...(((((.(((((((((..(((((....)))))..))))).......)).)).)).)))
+>ENERGY = -12.4  DCTN2 intron2_c2
+TGATTTTCTCACCTCTGGGGAAACCACAAGGAGCTGGTAAGAAGCCTGACCTTTCATCTG
+((.((((((((....)))))))).)).((((....(((.....)))...)))).......
+>ENERGY = -10.5  DNM1 intron2_c2
+CCACTGACCTCCTGCCCCATCACCCTCCAGGTCATCCGCAAGGGCTGGCTGACTATCAAT
+....(((......(((......((((...((....))...))))..)))......)))..
+>ENERGY = -10.6  DOCK7 intron2_c2
+TCTCCATTTTCCTAAACCTAGGATGGTAAGCGGATGTTTGGCACCTATTTTCGTGTTGGT
+...(((...(((((....)))))))).((((....))))(((((........)))))...
+>ENERGY = -13.8  DOCK9 intron2_c2
+CCTCAGTAACGTTGTGTTTCTGTCCTCAAGATCTGCCCCCTGGAGGAGAAGACGAGCGTC
+........(((((.(((((...(((((.((.........)).)))))..)))))))))).
+>ENERGY = -6.6  DTNA intron2_c2
+ACTTTCCATTCACCCTGTGTTTTGTTTTAGGCCTCCCAGACCTGTAACCAGCATGAACGA
+........((((..(((.(((..((((..((....))))))....))))))..))))...
+>ENERGY = -2.9  EMC1 intron2_c2
+AAAGAAAAACCAAAGTAACACTAATTACAAAAGTAAATTTTAAAATAATTTGAAAATATA
+........................((((....)))).(((((((....))))))).....
+>ENERGY = -11.4  ENAH intron2_c2
+GTTCATCTGTAATGTTTTCTCCCTCTGTAGGGCCAACATTGCCTAGACAAAACTCACAAC
+(((..(((((((((((....((((....))))..))))))))..)))...))).......
+>ENERGY = -9.9  ERC1 intron2_c2
+AAAGCTTGATTTTTCTCCTTCTGTCATTAGGCAAGTGAAAGACCAGAATAAGAAGGTAGC
+...((((..((.((((...(((.(((((.....))))).)))..)))).))..))))...
+>ENERGY = -7.4  ERGIC3 intron2_c2
+TTCTCCCTTGCCTTCTCCCTTCTCTCCTAGTCCATGACTTGCAGAGCTTTGGCCTTGACA
+.........(((.........((((...((((...))))...))))....))).......
+>ENERGY = -10.8  FNBP1 intron2_c2
+CTGGTTTCTCATTTATATTTGTGTCTGCAGGGTGCAACACCGGAGGATTTCAGCAACCTC
+((((.(((((..........((((.((((...))))))))..)))))..)))).......
+>ENERGY = -8.0  FNBP1L intron2_c2
+CTATTATAATGATTTAGATTCTCTTTTCAGGGCCCAGCACTAGAAGATTTCAGTCATCTG
+........((((((.(((...((((((.((.((...)).))))))))))).))))))...
+>ENERGY = -10.4  FRY intron2_c2
+ATAAAAAACCGGCTGATGGTGTGATTTCAGGGTGAGAGTATGGACAATTTCAACTGGGGA
+........((((.(((...(((..(((((...)))))......)))...))).))))...
+>ENERGY = -11.5  FRYL intron2_c2
+GGTTTTAGAAATCGTGTCTTGCTTTTCCAGGGTGAAAGTATGGACAATTTCAACTGGGGA
+((((...(((((..((((((((((((.......))))))).)))))))))))))).....
+>ENERGY = -26.7  GDPD5 intron2_c2
+GACCTGATGCCCACGGGGCCATCTCTGCAGGTGGCGCCTGGGTGGCATACGGAGCTACAA
+...((((((((..(((((((((((....))))))).))))...))))).)))........
+>ENERGY = -1.9  GRAMD1A intron2_c2
+GGAATCCTGACCTCTGACCCCTGTCCCCAGCCTTATCATCCTCATCGCCCTCAACGTCCT
+(((............(((....))).............)))...................
+>ENERGY = -11.6  GULP1 intron2_c2
+AGATATTAATTATTTTATTCTGTTTTACAGGAGGGGTTCAAAATGGGACTAACTCTTGAA
+...........................((((((.(((((......)))))..))))))..
+>ENERGY = -6.4  HOOK3 intron2_c2
+TAATAAACTAATTTTGTTTTTCATTTTTAGTCAGTCCTTCTAAAAAAGAAGCTTGAAGAA
+..((..(((((...((.....))...)))))..)).(((((.....))))).........
+>ENERGY = -12.0  ITSN1 intron2_c2
+TTCTACTTAAAGCTGTGACTTTTTCCACAGGTGGATGAAAGCCAAACTGGAGAACCCGGC
+............(((((........))))).(((.......)))..((((.....)))).
+>ENERGY = -16.8  MACF1 intron2_c2
+TGTGATGGTAATGTTCCAACATTTGTTTAGTTTCATGATAAAATTGAGCCTATGTTGGAG
+..............((((((((..(((((((((.......)))))))))..)))))))).
+>ENERGY = -4.9  MADD intron2_c2
+CTTACCCCGGCCTCCCTCCCTCTCTTGCAGGTTTTCATAGAGCTGAATCACATTAAAAAG
+.......((((((.....(((.......))).......)).))))...............
+>ENERGY = -3.4  MON2 intron2_c2
+CAAATTAAACTTAATTTTATATACCTTCAGGTCTGCCAGCATCCAAACTCTCGAATGAGA
+.((((((....)))))).....(((....)))................((((....))))
+>ENERGY = -15.1  MYO18A intron2_c2
+GGATGCCAGATCCCTTTTTCCACTCCACAGCTGGGCGCAAGCAGTTTGCCCGCCATGAGT
+((((.....))))........((((.(..((.(((((.((....)))))))))..)))))
+>ENERGY = -8.8  PTK2 intron2_c2
+CAGAAAAATGACTGGCTTCTGTGTTGTCAGCTTCAGCCCCAGGAAATCAGCCCCCCTCCT
+.............((((((((.((((.......))))..)))).....))))........
+>ENERGY = -10.2  SLC43A2 intron2_c2
+GTCCCCATGACGCAGCGCCTTCCTCCACAGTTGGCCTCTACACCTCCATCTTCGGCGTGC
+(((.....)))(((.((((.........((.((.......)).))........)))))))
+>ENERGY = -12.6  SPAG9 intron2_c2
+TTGCTTTACATGGAATGCATGGGCTTTAAGACCATAATTTCTTTGGTAAGGTTTCATCTG
+..(((((((..(((((..((((.........)))).)))))....)))))))........
+>ENERGY = -11.7  SPTAN1 intron2_c2
+GTTTGGAAAAAATTTTTTTGGTATTTTTAGAGCAAGCACCAGAAGCACCAGGCTTTTGAA
+(((((..((((((.........))))))....)))))..(((((((.....)))))))..
+>ENERGY = -8.0  SSR1 intron2_c2
+GCAAGCTTAAAACTTTCTCTTTTCTTCCAGATAAAGCTTCACCAAGAAGGTTGCCCAGGA
+((((.(((..........(((((((...))).))))..........))).))))......
+>ENERGY = -9.1  VDAC3 intron2_c2
+TTAAAGTAATTATTTTTTCTTGCTTACCAGGAATTTTCTACTTCTGGTCATGCTTACACT
+....(((((..........))))).(((((((.........)))))))............
+>ENERGY = -13.6  VPS29 intron2_c2
+TATGCTTTATCTCACCTTGACACTTTAAAGTTGGTGTTGGTATTAGGAGATCTGCACATC
+..(((...((((((((..((((((........))))))))).....)))))..)))....
