@@ -1,10 +1,14 @@
-
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * A class that can extract the information of micro-exon index, length and structure (dot bracket format)
+ * from a file.
+ * @version 1.0.0
+ */
 
 public class DotBracketReader {
     private String filepath;
@@ -43,6 +47,19 @@ public class DotBracketReader {
                     int[] Info = locationInfo.readLocation(gene.getName());
                     gene = new SequenceWithMicroexon(allLines.get(i), allLines.get(i+2), Info);
                 } result.add(gene);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        } return result;
+    }
+
+    public List<Sequence> readJunction(String filepath){
+        DotBracketReader dbr = new DotBracketReader(filepath);
+        List<Sequence> result = new ArrayList<>();
+        try { List<String> allLines = Files.readAllLines(Paths.get(this.filepath));
+            for (int i = 0; i < allLines.size()-1; i+=3) {
+                Sequence gene = new Sequence(allLines.get(i), allLines.get(i+2));
+                result.add(gene);
             }
         } catch (IOException e) {
             e.printStackTrace();

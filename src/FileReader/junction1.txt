@@ -1,3 +1,135 @@
+>ABI1 c1+intron1
+GUUCUGGAUGAUGUGGGCCAUGGUGUCAAGGUAAGCAUUUUAUAUUACAUUAACAAGCUA
+(((.((..((((((((.....(((((........))))).....)))))))).)))))..
+>ANK2 c1+intron1
+AUACAGCUUGGAGGGAGGACGAUCUGACAGGUAUCUCAUAAAACUUAUAAUUGAUGUCAG
+.....(((((...(((......)))..)))))............................
+>AGRN c1+intron1
+GACGGCCCCCGUGUGUUGGGGGAGUCCCCGGUGAGUGCUCUGGGCCGCGAGGGGACUCCC
+.((((...)))).......((((((((((.(((.((.(...).)))))..))))))))))
+>AP1G1 c1+intron1
+AGCCCAGACAUGCUUGCGCAUUUCAGAAAGGUAGGUGCCAUUCUGUAUGCCUAAGCCUUU
+...........(((((.((((..(((((.(((....))).))))).)))).)))))....
+>ANK3 c1+intron1
+GGGCUUUAGUCUCGGAGCGCGUUCUGCCAGGUACUUCGUUGUUGCUGUCUUUCAUAGUUA
+(.(((((......))))).).......(((..((......))..))).............
+>AP1S2 c1+intron1
+GCAAUUGAGCAGGCUGAUCUACUGCAGGAGGUAAGCUACUUAUUCUCUUCACUAGGCACU
+((......)).((.((.((((.((.((((((((((...)))).)))))))).))))))))
+>APBB1 c1+intron1
+CGUGUGGGGCGUCGGGCGGGACAGUGGAAGGUGGGAAUAGGGCUUGGGAUUCGAGGGUGG
+(((.(((....))).)))..((..(.(((...((........)).....))).)..))..
+>APBB2 c1+intron1
+GGCGAAGGAACGGCUCUCCUUUGUUUGCAGGUGCGUUCAGGGGGAACGGGGGUCGAGCCC
+......((..(((((((((((((..(((....)))..)))))).....)))))))..)).
+>ASAP1 c1+intron1
+AAAUCCUCUCUUCAACUGGAUCAGAAAGAAGUAAGUGGUUUACAUGUUUACAACAGGGCU
+(((((((..((((..(((...)))...))))..)).)))))...................
+>ASAP2 c1+intron1
+AAAUCCGCAUUGCAGGUUGAACAGAAAGAGGUGAGGGGAUUUAAUUUUGAAAGAUUGCAG
+((((((.(.((((...((.......))...))))).))))))..................
+>ATL1 c1+intron1
+GACCAGGUGGCUGCAGCUCUGUGGGACCAGGUAAGAACACCUUUAAUUCACAACUAAAUU
+.(((.(((..(((((....))))).))).)))............................
+>ATL2 c1+intron1
+GAUCAGAUUGCUGAAACACUAUGGGAACAGGUUGGUAUCUAUCUUUUGGUUUUUUAGUGA
+.......(((((((((.((((.((((..((((....)))).)))).)))).)))))))))
+>CHCHD3 c1+intron1
+GAGGAGGAACGCGCUAAGGCAAAGCACCUGGUGAGUAUUAAAAAUGUAGGAGAAAUUUUC
+........((.(((((.((.......))))))).))........................
+>CLIP1 c1+intron1
+GACGAGGAUGAAAGAGCCCAGGAGAGUCAGGUAAUGUUCCUGCCUUAUUGCUUUACUUUC
+.........((((((((....(((.(.((((.......))))))))...)))...)))))
+>CYTH2 c1+intron1
+CGGACCGGGAGGGCUGGCUCCUGAAGCUGGGUACGUGCCCUCCCGACCCCGCUGGUCCCU
+.(((((((((((((..(..(((......)))..)..)))))))).........)))))..
+>DCTN2 c1+intron1
+CCUGAGGAUGAUCAAGCGGAGUUCGAUGCGGUAAGAAUGUGUGCUGCCACAGACUCCUCC
+..(((......)))...((((((.(..((((((........))))))..).))))))...
+>DNM1 c1+intron1
+AUGAACAAGAAGAAGACUUCAGGGAACCAGGUGAGUGGGGCCCAGCACCCCAGCCCGAGG
+................((((.(((.....((((..(((...))).))))....)))))))
+>DOCK7 c1+intron1
+CAAGAAGCAUUCAGCAAAAUUGUUCAUCAGGUAAUGAUUCCAAUUUCUAGCUUCACUAUA
+...(((((....((..((((((...((((.....))))..)))))))).)))))......
+>DOCK9 c1+intron1
+AAGGAGCUUUCUGAAAUCAUGCAUGAGCAGGUGAGGGCCGCACUGGCUCCAACAACUUGG
+..((((((........((((((....)))..)))..........))))))..........
+>DTNA c1+intron1
+UGAGAAGCCACUCAACUUGGCUCACAUCGUGUGAGUAUCCCUACCCUCCCAGUAUAGAGA
+((((......)))).....(((((((...))))))).........(((........))).
+>EMC1 c1+intron1
+CAGUUUGCUAUAACCAGAAGGGUUUGCAUAUGUUUUAGAGAAGUAGUGAUUCAUGAUCCU
+.....(((...((((.....)))).)))((((..(((.........)))..)))).....
+>ENAH c1+intron1
+CCUUAGAAGUGUUAAAUUCACAGGAAACAGGUAAGGUGCCCAUGGUUUAUUUGUAUUUUC
+(((..(((........)))..)))..(((((((((.(......).)))))))))......
+>ERC1 c1+intron1
+CAAAGAUAAGAAGAUAGCUGAGUUGGAAAGGUAAGAAAGUGAAGCUGAUUGGGGCUUAUG
+................(((...(((......)))...))).(((((......)))))...
+>ERGIC3 c1+intron1
+GGAAGAGCUUCCAGCAGUCCCAUGUGCACGGUGAGUGAUCUGCACUAGCUGGGGAGAUUU
+.......(((((..((((.....(((((.(((.....))))))))..)))))))))....
+>FNBP1 c1+intron1
+AUCCACUGCUUCAGGAGCCUAAAGCGUGGGGUAAGUUCUGCUCCGGAAUCCUGUCUCUCU
+..((((.((((.((....)).))))))))((...((((((...)))))))).........
+>FNBP1L c1+intron1
+AUUCCUUCUUUCAGAAGCCUCAAAAGAGGGGUAAGUUUAAUAAUGGGUUAAAAUGCAUGA
+...((((((((.((....))..))))))))(((..((((((.....)))))).)))....
+>FRY c1+intron1
+UUCCUAGAUGUGGAGCUGGAGGAUGGAGAGGUACGGUGUAUUCUCUGUAAAAAUAAUCCC
+...((((........)))).((((.......(((((........)))))......)))).
+>FRYL c1+intron1
+UUUUUAGAUGUUGAAUUGGAAGAUGCAGAGGUAAGGAUGUGGGCUUUCUCUGUUAAUAUU
+(((((.(((.....))).))))).(((((((.(((........)))))))))).......
+>GDPD5 c1+intron1
+CCUCAUCGUGGGCAUCUUCGUGCUCCAGAAGUGAGUAGGAUCUGACCACUUCCGUGGCUG
+.(((((..(((((((....)))).)))...)))))..........((((....))))...
+>GRAMD1A c1+intron1
+CCCCAGUGCCCUGGUUCUCAUCAGCAUUGUGUGAGUAAGAGACAGGAGCAGUGGCCACAC
+..(((.(((((((..(((..(((........)))...)))..)))).))).)))......
+>GULP1 c1+intron1
+GAUAUUCAAUCAAAAUUAGAUGAGAUGCAGGUGACUAUUUUGAUAGACUGGCCCAUAAAU
+.....((.((((((((.((.(.(........).))))))))))).)).............
+>HOOK3 c1+intron1
+UUACAGGAUCAAGGCUCAAAAGCAGAAGAUGUAAGUUUUAAUAUGUACCAACGAUGGUCC
+(((((...((...(((....))).))...)))))............((((....))))..
+>ITSN1 c1+intron1
+AUCACUAUCCAGCCAGGAGACAUAGUCAUGGUAAGAAAGACUCCAGUGAGAGGGUCAUUU
+.......((..((((.((.......)).))))..))..(((((........)))))....
+>MACF1 c1+intron1
+CUGGAUGAAGCCGUGUCCCAGUCCACACAGGUAUGUGUGUGUCUGACACUCAUAACCUUG
+..((((((....(((((..((.(((((((....)))))).).)))))))))))..))...
+>MADD c1+intron1
+GGGAUCAACCUCAAAUUCAUGCACAAUCAGGUAGGUGCGAGCGGCAGCACGAGGCUCCCU
+((((....((((.......(((........))).((((........)))))))).)))).
+>MON2 c1+intron1
+UGGAGACCUCUGACUGGCCAUCUACUUGAGGUAAAUUCUCUUUCUUAAAUAUAUUUAAUU
+.(((((((((....(((....)))...)))).....)))))...................
+>MYO18A c1+intron1
+ACCACCUGGGGGCUGCGGGAGCCACCAAAGGUAACCUGCAGUGGGUCCCAGUAGGCUGGC
+.((..((((((((((((((.(((......)))..))))))))...))))))..)).....
+>PTK2 c1+intron1
+CCUGCUGACAGCUACAACGAGGGUGUCAAGGUGGGCAUCUGAGCCUGUGCAGCACCUUCU
+..(((((((((((.((.....((((((......)))))))))).)))).)))))......
+>SLC43A2 c1+intron1
+AGUUCCUGGUCAGCGGCGACCAGAAGACAGGUAGGUGCCCCGGGCAGCCUCGGUCGCUGU
+............(((((((((.((.....(((...((((...))))))))))))))))))
+>SPAG9 c1+intron1
+GAGAUGUGGAUGAAGGAGCAGAUUUACUAGGUAUGAUAGCUCAUCUGAAGAAAUAUCAUA
+..(((((...(..((((((.....(((...))).....))))..))..)...)))))...
+>SPTAN1 c1+intron1
+GAGUCGUACAAGGAUCCCACCAACAUCCAGGUAAGCUGAAGUGACUGGGUGUUGGUCUUG
+........((((......((((((((((((....((....))..))))))))))))))))
+>SSR1 c1+intron1
+GGAUUCCUCAGGAAACAUUGAAUCAAAUCAGUAAGUAGUCUUACAGACUUGGCUGGGAAG
+...((((.(((...........((((.((.(((((....))))).)).))))))))))).
+>VDAC3 c1+intron1
+GACCUGAAAACCAAGUCUUGUAGUGGAGUGGUGAGUAUCUAAUAUAUUUUUAAUGAAUGU
+.........((((..(((......))).))))...........((((((.....))))))
+>VPS29 c1+intron1
+GGUGACUGAGCGGAGCCCGGUGACAGGAUGGUGAGGGCUGCAGUUGCGGCGACCAAGGCC
+(((..(((((((.(((((....((......))..))))).).))).)))..)))......
 >ENERGY = -9.7  ABI1 c1_intron1
 GTTCTGGATGATGTGGGCCATGGTGTCAAGGTAAGCATTTTATATTACATTAACAAGCTA
 (((.((..((((((((.....(((((........))))).....)))))))).)))))..
