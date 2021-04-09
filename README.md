@@ -23,6 +23,8 @@ This is the program for BCB330Y1 Microexons project
 -------------------------------------------------------
 1. FileReader package in src is the collection of input files for Java part and Out 
     package contains the output result files.
-2. ShiftSeq.py is not official used in the current phase of the project. It is 
+2. input package is the collection of input files for python part and output 
+       package contains the output result files.
+3. ShiftSeq.py is not official used in the current phase of the project. It is 
     a fundamental version code for shifting nucleotide from 5' to 3' direction.
     It could be updated in future analysis.

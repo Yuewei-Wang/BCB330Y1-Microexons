@@ -4,7 +4,7 @@ from TruncateJunction import chromo_number_set
 from Bio import SeqIO
 
 
-with open("out_Microexons.csv", 'r') as csv_file:
+with open("input/out_Microexons.csv", 'r') as csv_file:
     new_dict = dict()
     gene_name_list = []
     csv_reader = csv.reader(csv_file)

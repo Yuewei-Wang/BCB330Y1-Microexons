@@ -1,6 +1,6 @@
 import csv
 
-file1 = open('junction_4_100shuffle.out', 'r')
+file1 = open('input/junction_1_100shuffle.out', 'r')
 Lines = file1.readlines()
 print(len(Lines))
 seq = dict()
@@ -20,7 +20,7 @@ for i in range(len(Lines)):
     i = i + 1
 file1.close()
 
-with open('out.csv', 'w') as out:
+with open('output/out1.csv', 'w') as out:
     header = ["Gene Name", "ori seq"]
     for i in range(1, 101):
         header.append("shuffle" + str(i))

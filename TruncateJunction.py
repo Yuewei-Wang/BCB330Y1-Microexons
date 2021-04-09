@@ -15,7 +15,7 @@ chromo_number_set = {"ABI1": "10", "ANK2": "4", "AGRN": "1", "AP1G1": "16",
                      "MYO18A": "17", "PTK2": "8", "SLC43A2": "17", "SPAG9": "17",
                      "SPTAN1": "9", "SSR1": "6", "VDAC3": "8", "VPS29": "12"}
 
-with open("out_Microexons.csv", 'r') as csv_file:
+with open("input/out_Microexons.csv", 'r') as csv_file:
     new_dict = dict()
     gene_name_list = []
     csv_reader = csv.reader(csv_file)
@@ -56,7 +56,7 @@ def find_seq_by_coordinate(gene_name, chr_number):
             fourth_junction]
 
 
-with open('junction_results.csv', 'w') as output_csv_file:
+with open('output/junction_results.csv', 'w') as output_csv_file:
     header = ["Gene Name", "3\' C1 junction", "5\' A junction",
               "3\' A junction", "5\' C2 junction"]
     cw = csv.DictWriter(output_csv_file, header)
