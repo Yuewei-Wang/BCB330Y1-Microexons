@@ -1,3 +1,7 @@
+/**
+ * A class that handle the exon information of micro-exon coordinates, from a file containing BioMart result.
+ * @version 1.0.0
+ */
 
 public class ExonsCoordinates {
     private String geneName;

@@ -1,3 +1,7 @@
+/**
+ * A class that store and classify the information from C1+C2 sequences
+ * @version 1.0.0
+ */
 
 public class Sequence {
     private String Name;
@@ -7,14 +11,19 @@ public class Sequence {
 
     public Sequence(String title, String seq){
         String[] contents = title.split("  ");
-        String[] energyInfo = contents[0].split(" ");
-        String[] nameInfo = contents[1].split(" ");
-        Name = nameInfo[0];
-        Type = nameInfo[1];
-        //Species = nameInfo[2];
+        if (contents.length>1){
+            String[] energyInfo = contents[0].split(" ");
+            String[] nameInfo = contents[1].split(" ");
+            Name = nameInfo[0];
+            Type = nameInfo[1];
+            String energy = energyInfo[2].substring(1);
+            Energy = Double.parseDouble(energy)*-1;
+        } else {//junction
+            String[] shortContent = title.split(" ");
+            Name = shortContent[0].substring(1);
+            Type = shortContent[1];
+        }
         Seq = seq;
-        String energy = energyInfo[2].substring(1);
-        Energy = Double.parseDouble(energy)*-1;
     }
 
     public void setSeq(String seq) {

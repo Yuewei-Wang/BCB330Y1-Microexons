@@ -1,4 +1,7 @@
-
+/**
+ * A child class of Sequence class, it stores and extend the information about micro-exons
+ * @version 1.0.0
+ */
 
 public class SequenceWithMicroexon extends Sequence{
     private int A_index;

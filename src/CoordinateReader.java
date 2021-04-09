@@ -1,6 +1,3 @@
-
-
-import javax.sound.midi.Sequence;;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -8,6 +5,12 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+
+/**
+ * A class that can extract the information of micro-exon coordinates, exon and transcript ID, strand
+ * from a file containing BioMart result.
+ * @version 1.0.0
+ */
 
 public class CoordinateReader {
     private String filepath;
