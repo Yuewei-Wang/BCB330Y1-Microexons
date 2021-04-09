@@ -41,15 +41,15 @@ def find_seq_by_coordinate(gene_name, chr_number):
     seq_file = "Homo_sapiens.GRCh38.dna.chromosome." + chr_number +".fa.gz"
     with gzip.open(seq_file, "rt") as fasta_file:
         for record in SeqIO.parse(fasta_file, "fasta"):
-            first_junction = record.seq[c1_intron-31:c1_intron+29]
+            first_junction = record.seq[c1_intron-30:c1_intron+30]
             second_junction = record.seq[intron_a-31:intron_a+29]
-            third_junction = record.seq[a_intron-31:a_intron+29]
+            third_junction = record.seq[a_intron-30:a_intron+30]
             fourth_junction = record.seq[intron_c2-31:intron_c2+29]
             if strand == "-1\n" or strand == "-1":
                 first_junction = record.seq[intron_c2-31:intron_c2+29].reverse_complement()
-                second_junction = record.seq[a_intron-31:a_intron+29].reverse_complement()
+                second_junction = record.seq[a_intron-30:a_intron+30].reverse_complement()
                 third_junction = record.seq[intron_a-31:intron_a+29].reverse_complement()
-                fourth_junction = record.seq[c1_intron-31:c1_intron+29].reverse_complement()
+                fourth_junction = record.seq[c1_intron-30:c1_intron+30].reverse_complement()
     if not fasta_file.closed:
         print("ERROR: file is not properly closed after used.")
     return [gene_name, first_junction, second_junction, third_junction,
